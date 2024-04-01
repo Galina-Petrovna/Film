@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <title>ПРО КИНО - Аватар: Легенда об Аанге</title>
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    .visually-hidden {
+      position: fixed;
+      transform: scale(0);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <img class="header__logo" src="img/logo.svg" alt="Логотип ПРО КИНО">
+
+      <a class="header__link" href="#trailers">Смотреть трейлер</a>
+      
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 class="visually-hidden"> сериал - Аватар: Легенда об Аанге - выход 22 февраля </h1>
+        <img class="hero__banner" src="img/description.png" alt="Avatar the last aurbender">
+
+        <p class="hero__date">
+          <time datetime="2024-02-22"> 22 февраля</time>
+        </p>
+
+        <a class="hero__arrow" href="#about">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="31.5" stroke="white"/>
+            <path d="M20.1921 26.4547C20.1921 26.2532 20.2718 26.0469 20.4265 25.8922C20.7359 25.5828 21.2421 25.5828 21.5515 25.8922L32.1406 36.4813L42.575 26.0469C42.8843 25.7375 43.3906 25.7375 43.7 26.0469C44.0093 26.3563 44.0093 26.8625 43.7 27.1719L32.7031 38.1735C32.3937 38.4828 31.8875 38.4828 31.5781 38.1735L20.4265 27.0219C20.2671 26.8625 20.1921 26.661 20.1921 26.4547Z" fill="white"/>
+          </svg>
+            
+        </a>
+        
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="container">
+
+      </div>
+    </section>
+    <section class="trailers" id="trailers">
+      <div class="container">
+        <ul class="trailers__buttons">
+          <li class="trailers__item-buttons">
+            <button class="trailers__button trailers__button_active" aria-label="Первый трейлер">трейлер 1</button></li>
+          <li class="trailers__item-buttons">
+            <button class="trailers__button" aria-label="Второй трейлер">трейлер 2</button></li>
+          <li class="trailers__item-buttons">
+            <button class="trailers__button" aria-label="Третий трейлер">трейлер 3</button></li>
+        </ul>
+
+        <ul class="trailers__list">
+          <li class="trailers__item">
+            <div class="trailers__wrapper">
+              <iframe class="trailers__video" src="https://www.youtube.com/embed/zCFxadhcJTw" title="YouTube video player" frameborder="0"></iframe>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="container footer__container">
+        <ul class="footer__developers">
+          <li class="footer__developer">Designer: 
+            <a class="footer__link" href="https://t.me/mrshmallowww">Anastasia Ilina</a>
+          </li>
+          <li class="footer__developer">Developer: 
+            <a class="footer__link" href="https://t.me/ramanavagalina">Galina</a>
+          </li>
+        </ul>
+
+        <p class="footer__copyright">© ПРОКИНО, 2024</p>
+        <img class="footer__logo" src="img/logo.svg" alt="Логотип ПРО КИНО" >
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
