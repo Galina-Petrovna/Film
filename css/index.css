@@ -1,3 +1,7 @@
+:root {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: Inter;
     font-weight: 400;
@@ -84,10 +88,6 @@ html {
     border: none;
   }
   
-  /*
-  Доступно скрываю элементы
-  */
-  
   .visually-hidden {
     position: fixed;
     transform: scale(0);
@@ -109,6 +109,29 @@ html {
     margin: 0 auto;
   }
 
+  .link-show-trailer {
+    border-radius: 52px;
+    padding: 14px 20px;
+    background-color: #ff3d00;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.link-show-trailer:hover {
+    background-color: #ff521b;
+}
+
+.link-show-trailer:focus {
+    background-color: #ff521b;
+    border-color: #fff;
+}
+
+
   .header {
     position: absolute;
     top: 0;
@@ -125,65 +148,62 @@ html {
 }
 
 .header__link {
-    border-radius: 52px;
-    padding: 14px 20px;
-    background-color: #ff3d00;
-
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #fff;
-    border: 1px solid transparent;
-    outline: none;
+    display: block;
 }
 
-.header__link:hover {
-    background-color: #ff521b;
-}
-
-.header__link:focus {
-    background-color: #ff521b;
-    border-color: #fff;
-}
 
 .hero {
-    position: relative;
-    background-image: url(../img/photo.jpg) ;
-    background-color: linear-gradient(180deg, #000 0%, #000 100%);
+    background-position: top;
+    background-image: linear-gradient(
+        180.00deg,
+         rgba(0, 0, 0, 0) 50%,
+         rgba(0, 0, 0, 0.76) 65%,
+         rgba(0, 0, 0, 1) 100%), 
+         image-set(
+            url('../img/photo@2x.avif') type('image/avif') 2x,
+            url('../img/photo.avif') type('image/avif'),
+            url('../img/photo@2x.webp') type('image/webp') 2x,
+            url('../img/photo.webp') type('image/webp'),
+            url('../img/photo@2x.jpg') 2x,
+            url('../img/photo.jpg')
+         );
     background-repeat: no-repeat;
-    width: 1440px;
-    height: 810px;
-
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    /* text-align: end; */
-    align-items: center; 
-
-
+    background-size: contain;
+    padding-bottom: 60px;
+    padding-top: calc(476 / 1440 * 100%);
     
 }
 .hero__container {
-    
-    width: 795px;
-    
-    /* justify-content: right; */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 
-    /* padding-top: 100px; */
 }
 
 .hero__banner {
+    max-width: 100%;
     width: 795px;
-    height: 209px;
+    margin-bottom: 2px;
 }
 .hero__date {
     font-weight: 600;
     font-size: 40px;
     text-transform: uppercase;
-    text-align: center;
     color: #ff3d00;
+    margin-bottom: 16px;
+}
+
+.hero__link {
+    display: none;
 }
 .hero__arrow {
+    width: 64px;
+    height: 64px;
+}
+
+.hero__arrow:hover {
+    color: #ff3d00;
 }
 
 
@@ -233,11 +253,6 @@ html {
     background-size: cover;
 }
 
-
-
-
-
-
 .trailers {
     padding: 60px 0 120px;
 }
@@ -246,7 +261,14 @@ html {
     display: flex;
     gap: 12px;
     align-items: center;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.trailers__buttons::-webkit-scrollbar {
+    display: none;
 }
 
 .trailers__button {
@@ -257,6 +279,7 @@ html {
     text-transform: uppercase;
     color: #fff;
     border-radius: 8px;
+    white-space: nowrap;
 }
 .trailers__button_active {
     background-color: #ff3d00;
@@ -299,7 +322,7 @@ html {
 }
 
 .footer__link {
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 }
 
 .footer__link:hover {
@@ -320,16 +343,101 @@ html {
     align-self: end;
 }
 
+@media (max-width: 1080px) {
+    .hero {
+        padding-top: calc(337 / 1024 * 100%);
+        padding-bottom: 50px;
+        background-image: linear-gradient(
+        180.00deg,
+         rgba(0, 0, 0, 0) 50%,
+         rgba(0, 0, 0, 0.76) 65%,
+         rgba(0, 0, 0, 1) 100%), 
+         image-set(
+            url('../img/photo_1024@2x.avif') type('image/avif') 2x,
+            url('../img/photo_1024.avif') type('image/avif'),
+            url('../img/photo_1024@2x.webp') type('image/webp') 2x,
+            url('../img/photo_1024.webp') type('image/webp'),
+            url('../img/photo_1024@2x.jpg') 2x,
+            url('../img/photo_1024.jpg')
+         );
+    }
 
+    .hero__banner {
+        width: 639px;
+    }
 
-@media (max-width: 1024px) {
+    .hero__date {
+        font-size: 32px;
+    }
+
+    .about {
+        padding: 50px 0;
+    }
+    
     .about__container:after {
-        flex-basis: 436px;
-        background-image: url(../img/aang.jpg);
+        flex-basis: 50%;
+        background-image: url('../img/aang.jpg');
+    }
+
+    .about__content {
+        flex-basis: 50%;
+    }
+
+    .about__title {
+        font-size: 40px;
+        margin-bottom: 24px;
+    }
+
+    .about__description {
+        font-size: 16px;
+    }
+
+    .trailers {
+        padding: 50px 0 100px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .container {
+        padding: 0 44px;
+    }
+
+    .header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .header__logo {
+        width: 130px;
+    }
+
+    .hero {
+        padding-top: calc(337 / 768 * 100%);
+        padding-bottom: 40px;
+        background-image: linear-gradient(
+        180.00deg,
+         rgba(0, 0, 0, 0) 50%,
+         rgba(0, 0, 0, 0.76) 65%,
+         rgba(0, 0, 0, 1) 100%), 
+         image-set(
+            url('../img/photo_768@2x.avif') type('image/avif') 2x,
+            url('../img/photo_768.avif') type('image/avif'),
+            url('../img/photo_768@2x.webp') type('image/webp') 2x,
+            url('../img/photo_768.webp') type('image/webp'),
+            url('../img/photo_768@2x.jpg') 2x,
+            url('../img/photo_768.jpg')
+         );
+    }
+
+    .hero__date {
+        margin-bottom: 12px;
+    }
+
+    .hero__arrow {
+        width: 36px;
+        height: 36px;
+    }
+
     .about__container {
         flex-direction: column;
     }
@@ -340,15 +448,139 @@ html {
 
     .about__container:after {
         flex-basis: 300px;
-        background-image: url(../img/aang768.jpg);
-        height: 300px;
+        background-image: url('../img/aang768.jpg');
+    }
+
+    .about__title {
+        max-width: 370px;
+    }
+
+    .trailers {
+        padding: 40px 0 80px;
+    }
+
+    .trailers__buttons {
+        gap: 8px;
+    }
+
+    .trailers__button {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    .footer {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .footer__container {
+        gap: 20px;
+    }
+
+    .footer__developers {
+        font-size: 12px;
+    }
+
+    .footer__copyright {
+        font-size: 12px;
+    }
+
+    .footer__logo {
+        width: 217px;
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 620px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .header__logo {
+        width: 80px;
+    }
+
+    .header__link {
+        display: none;
+    }
+    
+    .hero {
+        padding-top: calc(173 / 320 * 100%);
+        padding-bottom: 30px;
+        background-image: linear-gradient(
+            180.00deg,
+             rgba(0, 0, 0, 0) 50%,
+             rgba(0, 0, 0, 0.76) 65%,
+             rgba(0, 0, 0, 1) 100%), 
+             image-set(
+                url('../img/photo_320@2x.avif') type('image/avif') 2x,
+                url('../img/photo_320.avif') type('image/avif'),
+                url('../img/photo_320@2x.webp') type('image/webp') 2x,
+                url('../img/photo_320.webp') type('image/webp'),
+                url('../img/photo_320@2x.jpg') 2x,
+                url('../img/photo_320.jpg'));
+             
+    }
+
+    .hero__date {
+        font-size: 20px;
+    }
+
+    .hero__link {
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .about {
+        padding: 30px 0;
+    }
+
     .about__container:after {
         flex-basis: 530px;
-        background-image: url(../img/aang320.jpg);
+        background-image: url('../img/aang320.jpg');
+    }
+
+    .about__title {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    .trailers {
+        padding: 30px 0 60px;
+    }
+
+    .trailers__container {
+        padding: 0;
+    }
+
+    .trailers__buttons {
+        gap: 8px;
+        padding: 0 16px;
+    }
+
+    .trailers__button {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    .trailers__list {
+        padding: 0 16px;
+    }
+
+    .footer__container {
+        grid-template-areas:
+        "logo"
+        "developers"
+        "copyright";
+    }
+
+    .footer__logo {
+        margin-bottom: 4px;
+        justify-self: start;
     }
 }
 
