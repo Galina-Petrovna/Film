@@ -93,16 +93,6 @@ html {
     transform: scale(0);
   }
   
-  
-  /*
-  Пример контейнера
-  
-  Если контейнер 1180px по макету,
-  то для max-width прибавляем паддинги 30px*2, 
-  в итоге 1240px
-  Чтобы контент не прижимался к краям экрана
-  */
-  
   .container {
     max-width: 1432px;
     padding: 0 66px;
@@ -291,6 +281,7 @@ html {
 }
 
 .trailers__wrapper {
+    display: none;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
